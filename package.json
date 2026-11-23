@@ -1,0 +1,50 @@
+{
+  "name": "huihua",
+  "productName": "绘话",
+  "version": "2.0.2",
+  "description": "绘话 · 把对话聊成一张图的桌面生图工作台",
+  "author": "nhh311",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:renderer": "cross-env NODE_ENV=development rspack serve -c rspack.config.ts",
+    "build:renderer": "cross-env NODE_ENV=production rspack build -c rspack.config.ts",
+    "typecheck": "tsc --noEmit",
+    "dev": "tauri dev",
+    "build": "tauri build",
+    "build:open": "tauri build --config src-tauri/tauri.open.conf.json --features open && npm run scrub",
+    "build:portable": "tauri build --no-bundle && npm run scrub",
+    "scrub": "python tools/scrub_paths.py src-tauri/target/release/huihua.exe",
+    "dist": "tauri build"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.12.5",
+    "clsx": "2.1.1",
+    "fflate": "0.8.3",
+    "highlight.js": "11.10.0",
+    "idb": "8.0.3",
+    "katex": "0.16.11",
+    "lucide-react": "0.468.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-markdown": "9.0.1",
+    "rehype-highlight": "7.0.0",
+    "rehype-katex": "7.0.1",
+    "remark-gfm": "4.0.0",
+    "remark-math": "6.0.0",
+    "zustand": "4.4.7"
+  },
+  "devDependencies": {
+    "@rspack/cli": "2.0.2",
+    "@rspack/core": "2.0.2",
+    "@rspack/dev-server": "2.0.1",
+    "@swc/helpers": "0.5.23",
+    "@tauri-apps/cli": "^2.12.6",
+    "@types/node": "22.10.2",
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.5",
+    "cross-env": "7.0.3",
+    "typescript": "5.6.3"
+  }
+}

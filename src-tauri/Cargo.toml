@@ -1,0 +1,44 @@
+﻿[package]
+name = "huihua"
+version = "2.0.2"
+description = "绘话 · 把对话聊成一张图的桌面生图工作台"
+authors = ["nhh311"]
+license = "MIT"
+edition = "2021"
+rust-version = "1.90"
+
+# 发布构建：剥离符号，避免把开发机绝对路径写进 exe。
+# 只剥符号不够（debug 信息里仍有 crate 源码路径），打包时还要配合
+#   $env:RUSTFLAGS = "--remap-path-prefix=$PWD=."
+# 才能把 C:\Users\<name>\... 这类构建路径一起抹掉。详见 README「从源码构建」。
+[profile.release]
+strip = true
+debug = false
+
+[lib]
+name = "huihua_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[features]
+# 开源构建：不读取安装目录里的内置素材库，只认用户导入与环境变量。
+open = []
+
+[build-dependencies]
+tauri-build = { version = "2.7.6", features = [] }
+
+[dependencies]
+tauri = { version = "2.12.7", features = ["protocol-asset", "tray-icon"] }
+tauri-plugin-dialog = "2"
+tauri-plugin-opener = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.12", features = ["json", "multipart", "stream"] }
+tokio = { version = "1", features = ["fs", "sync", "time", "macros", "rt-multi-thread"] }
+futures-util = "0.3"
+bytes = "1"
+base64 = "0.22"
+uuid = { version = "1", features = ["v4"] }
+chrono = { version = "0.4", features = ["serde"] }
+image = { version = "0.25", default-features = false, features = ["jpeg", "png", "webp"] }
+dirs = "6"
+urlencoding = "2"

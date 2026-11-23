@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "source": "绘话素材库模板",
+    "license": "示例图片由脚本生成，可自由使用",
+    "scrapedAt": "2026-11-23",
+    "count": 2
+  },
+  "categories": [
+    { "id": "poster", "name": "海报", "nameEn": "Poster", "count": 1 },
+    { "id": "scene", "name": "场景", "nameEn": "Scene", "count": 1 }
+  ],
+  "presets": [
+    {
+      "id": "poster-01",
+      "cat": "poster",
+      "title": "雨夜霓虹海报",
+      "titleEn": "Neon Rain Poster",
+      "prompt": "雨夜东京街头，霓虹灯牌倒映在湿地面上，主体：{主体}。青橙电影色调，浅景深，35mm 胶片颗粒，竖版海报构图，上方留出标题空间。",
+      "promptEn": "Rainy Tokyo street at night, neon signs mirrored on wet pavement, subject: {subject}. Teal-orange cinematic grade, shallow depth of field, 35mm grain, vertical poster composition with title space at the top.",
+      "params": { "主体": "一位撑透明伞的女孩" },
+      "vars": "主体",
+      "varsEn": "subject",
+      "desc": "暗色底 + 一处暖光，适合做活动海报。",
+      "descEn": "Dark base with one warm light. Good for event posters.",
+      "model": "",
+      "image": "poster-01.png"
+    },
+    {
+      "id": "scene-01",
+      "cat": "scene",
+      "title": "清晨薄雾山谷",
+      "titleEn": "Misty Morning Valley",
+      "prompt": "清晨的高山草甸，薄雾贴着地面，远处是层层退去的山脊，第一缕阳光落在{焦点}。宽幅构图，空气感强，低饱和青绿与暖金，参考大画幅风光摄影。",
+      "promptEn": "Alpine meadow at dawn, mist hugging the ground, layered ridges fading into the distance, first sunlight hitting the {subject}. Wide composition, strong aerial perspective, desaturated teal-green and warm gold, large-format landscape photography.",
+      "params": { "焦点": "一块裸露的岩石" },
+      "vars": "焦点",
+      "varsEn": "subject",
+      "desc": "无参考图也能用的纯文字场景。",
+      "descEn": "Pure text-to-image scene that needs no reference.",
+      "model": "",
+      "image": "poster-02.png"
+    }
+  ]
+}

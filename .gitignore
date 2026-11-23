@@ -1,0 +1,25 @@
+# 依赖与构建产物
+node_modules/
+dist/
+src-tauri/target/
+src-tauri/gen/
+release-tauri/
+
+# 素材库：453 条提示词与示例图版权不属于本项目，公开仓库前必须移出
+src-tauri/resources/presets/
+
+# 本机数据与调试残留
+test/chrome-profile/
+test/*.log
+_audit/
+.taste-skill/
+上传说明.txt
+*.log
+.DS_Store
+Thumbs.db
+
+# 编辑器
+.vscode/
+.idea/
+
+# 说明：build/ 目录里的 icon.ico 被 installer.nsi 引用，需要随仓库提交，不要忽略。
